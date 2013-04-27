@@ -1,6 +1,7 @@
 {
   "name": "closest",
   "description": "Find the closest parent that matches a selector",
+  "repo": "discore/closest",
   "version": "0.0.1",
   "dependencies": {
     "component/matches-selector": "*"
