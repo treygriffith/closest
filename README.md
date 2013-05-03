@@ -5,7 +5,7 @@ Finds the closest parent that matches a selector.
 
 ## API
 
-### `closest(element, selector, checkSelf)`
+### closest(element, selector, checkSelf)
 
 * element - will check this elements parents
 * selector - CSS selector to match parents
