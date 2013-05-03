@@ -15,9 +15,11 @@ Finds the closest parent that matches a selector.
 
 Example:
 
-    closest(document.body, 'html') === document.documentElement
-    closest(document.body, 'body', true) === document.body
-    closest(document.documentElement, 'html') == null
+```js
+closest(document.body, 'html') === document.documentElement
+closest(document.body, 'body', true) === document.body
+closest(document.documentElement, 'html') == null
+```
 
 ## License
 
