@@ -4,10 +4,13 @@ module.exports = function (element, selector, checkYoSelf, root) {
   element = checkYoSelf ? element : element.parentNode
   root = root || document
 
-  while (element && element !== root) {
+  do {
     if (matches(element, selector))
       return element
-
-    element = element.parentNode
-  }
+    // After `matches` on the edge case that
+    // the selector matches the root
+    // (when the root is not the document)
+    if (element === root)
+      return
+  } while (element = element.parentNode)
 }
