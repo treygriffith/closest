@@ -25,6 +25,8 @@
       assert(closest(d3, '#d1', null, d2), undefined)
       assert(closest(d3, '#d1', null, d1), d1)
 
+      alert('ok')
+
       function assert(el1, el2) {
         if (el1 !== el2)
           alert(new Error().stack)

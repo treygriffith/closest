@@ -12,5 +12,7 @@ module.exports = function (element, selector, checkYoSelf, root) {
     // (when the root is not the document)
     if (element === root)
       return
-  } while (element = element.parentNode)
+    // Make sure `element !== document`
+    // otherwise we get an illegal invocation
+  } while ((element = element.parentNode) && element !== document)
 }
