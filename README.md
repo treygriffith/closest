@@ -5,13 +5,14 @@ Finds the closest parent that matches a selector.
 
 ## API
 
-### closest(element, selector, checkSelf)
+### closest(element, selector, checkSelf, within)
 
-* element - will check this elements parents
-* selector - CSS selector to match parents
-* checkSelf - check `element`.
+* `element` - will check this elements parents
+* `selector` - CSS selector to match parents
+* `checkSelf` - check `element`.
   If falsey, will begin with `element.parentNode` and is synonymous to `$.fn.parents`.
   Otherwise, it's `$.fn.closest`.
+* `within` - check only within this element. By default, `document`.
 
 Example:
 

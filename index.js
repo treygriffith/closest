@@ -1,12 +1,13 @@
 var matches = require('matches-selector')
 
-module.exports = function (element, selector, checkYoSelf) {
-  var parent = checkYoSelf ? element : element.parentNode
+module.exports = function (element, selector, checkYoSelf, root) {
+  element = checkYoSelf ? element : element.parentNode
+  root = root || document
 
-  while (parent && parent !== document) {
-    if (matches(parent, selector))
-      return parent
+  while (element && element !== root) {
+    if (matches(element, selector))
+      return element
 
-    parent = parent.parentNode
+    element = element.parentNode
   }
 }
