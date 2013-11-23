@@ -8,6 +8,12 @@ module.exports = function (element, selector, checkYoSelf, root) {
   // Make sure `element !== document` and `element != null`
   // otherwise we get an illegal invocation
   while ((element = element.parentNode) && element !== document) {
+
+    // document fragments cause illegal invocation
+    // in matches, so we skip them
+    if(element.nodeType === 11)
+      continue
+  
     if (matches(element, selector))
       return element
     // After `matches` on the edge case that
