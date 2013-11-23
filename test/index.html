@@ -18,6 +18,8 @@
       var d2 = document.querySelector('#d2')
       var d3 = document.querySelector('#d3')
       var d4 = document.querySelector('#d3').cloneNode(true);
+      var d5 = document.querySelector('#d3').cloneNode(true);
+      document.createDocumentFragment().appendChild(d5);
 
       assert(closest(d3, '#d2'), d2)
       assert(closest(d3, '#d3'), undefined)
@@ -27,6 +29,7 @@
       assert(closest(d3, '#d1', null, d1), d1)
       assert(closest(d4, 'body'), undefined)
       assert(closest(document.documentElement, '*'), undefined);
+      assert(closest(d5), undefined);
 
       alert('ok')
 
