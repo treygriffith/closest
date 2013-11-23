@@ -5,6 +5,13 @@ module.exports = function (element, selector, checkYoSelf, root) {
   root = root || document
 
   do {
+    // Make sure `element != null`
+    // otherwise we get an illegal invocation.
+    // this happens for disconnected DOM
+    // fragments
+    if (element == null)
+      return
+
     if (matches(element, selector))
       return element
     // After `matches` on the edge case that
